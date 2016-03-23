@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="HeaderBar">
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:elevation">@dimen/headerbar_elevation</item>
+    </style>
+
+    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ActionBarThemeOverlay" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/text_on_primary</item>
+        <item name="android:textColorSecondary">@color/subtitle_on_primary</item>
+    </style>
+
+    <style name="TextAppearance.Body2" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textSize">14sp</item>
+        <!-- bug in AppCompat, can remove this when it's fixed -->
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Head" parent="TextAppearance.Body2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/item_text_primary_head_color</item>
+    </style>
+
+    <style name="TextAppearance.Subhead" parent="TextAppearance.Body2">
+        <item name="android:textColor">@color/item_text_primary_color</item>
+    </style>
+
+    <style name="MyDialogTabTextAppearancce" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/unselected_tab_on_primary</item>
+    </style>
+
+
+</resources>

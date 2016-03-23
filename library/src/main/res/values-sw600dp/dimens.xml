@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- standard metrics -->
+    <dimen name="spacing_normal">12dp</dimen>
+    <dimen name="spacing_micro">8dp</dimen>
+    
+</resources>

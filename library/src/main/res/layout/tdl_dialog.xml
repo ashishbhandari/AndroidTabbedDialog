@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/HeaderBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/ActionBarThemeOverlay">
+
+        <include layout="@layout/tdl_dialog_header" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tdl_sliding_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tab_background"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/tab_selected_strip"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/text_on_primary"
+            app:tabTextAppearance="@style/MyDialogTabTextAppearancce" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.androidifygeeks.library.util.MultiSwipeRefreshLayout
+            android:id="@+id/tdl_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/tdl_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.androidifygeeks.library.util.MultiSwipeRefreshLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/horizontal_separator" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/tdl_button_neutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="New Button" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tdl_button_negative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button" />
+
+            <Button
+                android:id="@+id/tdl_button_positive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

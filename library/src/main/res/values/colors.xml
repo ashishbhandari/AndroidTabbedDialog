@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--general color -->
+    <color name="blue">#1976D2</color>
+    <color name="white">#FFFFFF</color>
+
+
+    <color name="text_on_primary">#ff004446</color>
+    <color name="subtitle_on_primary">#de004446</color>
+
+    <color name="item_text_primary_head_color">@color/white</color>
+    <color name="item_text_primary_color">#ff275B64</color>
+
+    <color name="tab_background">@color/blue</color>
+    <color name="tab_selected_strip">@android:color/white</color>
+    <color name="unselected_tab_on_primary">#b3004446</color>
+
+</resources>

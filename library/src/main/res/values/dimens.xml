@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="spacing_normal">8dp</dimen>
+    <dimen name="spacing_micro">4dp</dimen>
+
+    <dimen name="headerbar_elevation">4dp</dimen>
+
+    <dimen name="my_tab_view_page_margin">@dimen/padding_normal</dimen>
+    <dimen name="dialog_main_pane_height">165dp</dimen>
+
+</resources>
