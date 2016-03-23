@@ -1,6 +1,7 @@
 # AndroidTabbedDialog
 
 
+![](https://raw.githubusercontent.com/ashishbhandari/AndroidTabbedDialog/master/screenshots/test.gif)
 
 ## License
 Copyright (c) 2016 Ashish Bhandari
