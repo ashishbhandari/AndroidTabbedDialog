@@ -59,11 +59,23 @@
 
         <Button
             android:id="@+id/tdl_button_neutral"
+            android:minWidth="@dimen/card_min_button_width"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="New Button" />
+            android:layout_marginLeft="@dimen/spacing_micro"
+            android:layout_marginStart="@dimen/spacing_micro"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:paddingLeft="@dimen/spacing_normal"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingRight="@dimen/spacing_normal"
+            android:paddingEnd="@dimen/spacing_normal"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_medium"
+            android:fontFamily="@string/font_fontFamily_medium"
+            android:textColor="@color/flat_button_text"
+            tools:text="Neutral"
+            style="?android:borderlessButtonStyle" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -73,15 +85,44 @@
 
             <Button
                 android:id="@+id/tdl_button_negative"
+                android:minWidth="@dimen/card_min_button_width"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Button" />
+                android:paddingLeft="@dimen/spacing_normal"
+                android:paddingStart="@dimen/spacing_normal"
+                android:paddingRight="@dimen/spacing_normal"
+                android:paddingEnd="@dimen/spacing_normal"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_medium"
+                android:fontFamily="@string/font_fontFamily_medium"
+                android:textColor="@color/flat_button_text"
+                tools:text="Negative"
+                style="?android:borderlessButtonStyle"/>
 
             <Button
                 android:id="@+id/tdl_button_positive"
+                android:minWidth="@dimen/card_min_button_width"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Button" />
+                android:layout_marginLeft="@dimen/spacing_micro"
+                android:layout_marginStart="@dimen/spacing_micro"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:layout_gravity="end"
+                android:paddingLeft="@dimen/spacing_normal"
+                android:paddingStart="@dimen/spacing_normal"
+                android:paddingRight="@dimen/spacing_normal"
+                android:paddingEnd="@dimen/spacing_normal"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_medium"
+                android:fontFamily="@string/font_fontFamily_medium"
+                android:textColor="@color/flat_button_text"
+                android:layout_below="@+id/description"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                style="?android:borderlessButtonStyle"
+                tools:text="Positive" />
+
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

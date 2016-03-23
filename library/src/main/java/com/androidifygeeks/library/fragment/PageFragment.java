@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.androidifygeeks.library.R;
+import com.androidifygeeks.library.iface.IFragmentListener;
 
 /**
  * Created by b_ashish on 17-Mar-16.
@@ -22,16 +23,6 @@ public class PageFragment extends Fragment {
 
     public static final String ARG_DAY_INDEX = "com.androidifygeeks.library.ARG_DAY_INDEX";
     public static final String PARENT_TAG = "com.androidifygeeks.library.PARENT_TAG";
-
-    public interface FragmentListener {
-
-        void onFragmentViewCreated(Fragment fragment);
-
-        void onFragmentAttached(Fragment fragment);
-
-        void onFragmentDetached(Fragment fragment);
-
-    }
 
 
     @Override
@@ -54,8 +45,8 @@ public class PageFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if (getActivity() instanceof FragmentListener) {
-            ((FragmentListener) getActivity()).onFragmentViewCreated(this);
+        if (getActivity() instanceof IFragmentListener) {
+            ((IFragmentListener) getActivity()).onFragmentViewCreated(this);
         } else {
             Fragment parentFragment;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -67,8 +58,8 @@ public class PageFragment extends Fragment {
                 parentFragment = getActivity().getSupportFragmentManager().findFragmentByTag(tag);
             }
 
-            if (parentFragment instanceof FragmentListener) {
-                ((FragmentListener) parentFragment).onFragmentViewCreated(this);
+            if (parentFragment instanceof IFragmentListener) {
+                ((IFragmentListener) parentFragment).onFragmentViewCreated(this);
             }
         }
 
@@ -77,8 +68,8 @@ public class PageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (getActivity() instanceof FragmentListener) {
-            ((FragmentListener) getActivity()).onFragmentAttached(this);
+        if (getActivity() instanceof IFragmentListener) {
+            ((IFragmentListener) getActivity()).onFragmentAttached(this);
         } else {
             Fragment parentFragment;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -90,8 +81,8 @@ public class PageFragment extends Fragment {
                 parentFragment = getActivity().getSupportFragmentManager().findFragmentByTag(tag);
             }
 
-            if (parentFragment instanceof FragmentListener) {
-                ((FragmentListener) parentFragment).onFragmentAttached(this);
+            if (parentFragment instanceof IFragmentListener) {
+                ((IFragmentListener) parentFragment).onFragmentAttached(this);
             }
         }
     }
@@ -99,8 +90,8 @@ public class PageFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        if (getActivity() instanceof FragmentListener) {
-            ((FragmentListener) getActivity()).onFragmentDetached(this);
+        if (getActivity() instanceof IFragmentListener) {
+            ((IFragmentListener) getActivity()).onFragmentDetached(this);
         } else {
             Fragment parentFragment;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -112,8 +103,8 @@ public class PageFragment extends Fragment {
                 parentFragment = getActivity().getSupportFragmentManager().findFragmentByTag(tag);
             }
 
-            if (parentFragment instanceof FragmentListener) {
-                ((FragmentListener) parentFragment).onFragmentDetached(this);
+            if (parentFragment instanceof IFragmentListener) {
+                ((IFragmentListener) parentFragment).onFragmentDetached(this);
             }
         }
     }

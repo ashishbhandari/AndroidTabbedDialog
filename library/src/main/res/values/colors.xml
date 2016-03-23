@@ -16,4 +16,6 @@
     <color name="tab_selected_strip">@android:color/white</color>
     <color name="unselected_tab_on_primary">#b3004446</color>
 
+    <color name="flat_button_text">#ff008094</color>
+
 </resources>

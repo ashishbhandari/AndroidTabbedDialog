@@ -11,15 +11,17 @@ import android.widget.Toast;
 
 import com.androidifygeeks.library.fragment.PageFragment;
 import com.androidifygeeks.library.fragment.TabDialogFragment;
+import com.androidifygeeks.library.iface.IFragmentListener;
 import com.androidifygeeks.library.iface.ISimpleDialogCancelListener;
 import com.androidifygeeks.library.iface.ISimpleDialogListener;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class MainActivity extends AppCompatActivity implements ISimpleDialogListener, ISimpleDialogCancelListener, PageFragment.FragmentListener {
+public class MainActivity extends AppCompatActivity implements ISimpleDialogListener, ISimpleDialogCancelListener, IFragmentListener {
 
-    private static final int REQUEST_SIMPLE_DIALOG = 42;
+    private static final int REQUEST_TABBED_DIALOG = 42;
+
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private Set<Fragment> mMyScheduleFragments = new HashSet<Fragment>();
@@ -33,13 +35,13 @@ public class MainActivity extends AppCompatActivity implements ISimpleDialogList
             @Override
             public void onClick(View v) {
                 TabDialogFragment.createBuilder(MainActivity.this, getSupportFragmentManager())
-                        .setTitle("hello")
-//                        .setSubTitle("subtitle")
+                        .setTitle("Title")
+                        .setSubTitle("Subtitle")
                         .setTabButtonText(new CharSequence[]{"Tab1", "Tab2"})
-                        .setPositiveButtonText("Love")
-                        .setNegativeButtonText("Hate")
-                        .setNeutralButtonText("WTF?")
-                        .setRequestCode(REQUEST_SIMPLE_DIALOG)
+                        .setPositiveButtonText("Ok")
+                        .setNegativeButtonText("Cancel")
+                        .setNeutralButtonText("Neutral")
+                        .setRequestCode(REQUEST_TABBED_DIALOG)
                         .show();
             }
         });
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements ISimpleDialogList
     @Override
     public void onCancelled(int requestCode) {
         switch (requestCode) {
-            case REQUEST_SIMPLE_DIALOG:
+            case REQUEST_TABBED_DIALOG:
                 Toast.makeText(MainActivity.this, "Dialog cancelled", Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -57,21 +59,21 @@ public class MainActivity extends AppCompatActivity implements ISimpleDialogList
 
     @Override
     public void onNegativeButtonClicked(int requestCode) {
-        if (requestCode == REQUEST_SIMPLE_DIALOG) {
+        if (requestCode == REQUEST_TABBED_DIALOG) {
             Toast.makeText(MainActivity.this, "Negative button clicked", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onNeutralButtonClicked(int requestCode) {
-        if (requestCode == REQUEST_SIMPLE_DIALOG) {
+        if (requestCode == REQUEST_TABBED_DIALOG) {
             Toast.makeText(MainActivity.this, "Neutral button clicked", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onPositiveButtonClicked(int requestCode) {
-        if (requestCode == REQUEST_SIMPLE_DIALOG) {
+        if (requestCode == REQUEST_TABBED_DIALOG) {
             Toast.makeText(MainActivity.this, "Positive button clicked", Toast.LENGTH_SHORT).show();
         }
     }
