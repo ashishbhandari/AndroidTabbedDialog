@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
