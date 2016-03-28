@@ -30,6 +30,32 @@ Simply implement interface `IFragmentListener` in your Activity/Fragment. Listen
 `onFragmentAttached(Fragment fragment)`
 `onFragmentDetached(Fragment fragment)`
 
+```java
+    @Override
+    public void onFragmentViewCreated(Fragment fragment) {
+        int selectedTabPosition = fragment.getArguments().getInt(PageFragment.ARG_DAY_INDEX, 0);
+        View rootContainer = fragment.getView().findViewById(R.id.root_container);
+        Log.i(TAG, "Position: " + selectedTabPosition);
+
+        switch (selectedTabPosition) {
+            case 0:
+                // add view in container for first tab
+                View tabProductDetailLayout = getLayoutInflater().inflate(R.layout.tab_one_layout, (ViewGroup) rootContainer);
+
+                TextView textView = (TextView) tabProductDetailLayout.findViewById(R.id.text_view);
+                textView.setText("hello: tab1");
+                break;
+            case 1:
+                // add view in container for second tab
+                View tabProductDetailLayout2 = getLayoutInflater().inflate(R.layout.tab_one_layout, (ViewGroup) rootContainer);
+
+                TextView textView1 = (TextView) tabProductDetailLayout2.findViewById(R.id.text_view);
+                textView1.setText("hello: tab2");
+                break;
+        }
+    }
+```
+
 ## License
 Copyright (c) 2016 Ashish Bhandari
 
