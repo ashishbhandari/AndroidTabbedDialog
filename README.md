@@ -9,6 +9,24 @@
 
 ![](https://raw.githubusercontent.com/ashishbhandari/AndroidTabbedDialog/master/screenshots/test.gif)
 
+##Setup
+Add jitpack to your project’s repositories.
+
+```
+repositories {
+        // ...
+        maven { url "https://jitpack.io" }
+    }
+```
+
+Then add Tabbed dialog to your Module’s dependencies
+
+```
+dependencies {
+	         compile 'com.github.ashishbhandari:AndroidTabbedDialog:1.0'
+	}
+```
+
 
 ## How to create tab dialogs:
 
