@@ -23,7 +23,7 @@ Then add Tabbed dialog to your Module’s dependencies
 
 ```
 dependencies {
-	         compile 'com.github.ashishbhandari:AndroidTabbedDialog:1.0'
+	         compile 'com.github.ashishbhandari:AndroidTabbedDialog:v1.1'
 	}
 ```
 
