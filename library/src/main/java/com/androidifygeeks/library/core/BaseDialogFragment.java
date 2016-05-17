@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -58,6 +59,10 @@ public abstract class BaseDialogFragment extends DialogFragment implements Dialo
             dialog.setCanceledOnTouchOutside(
                     args.getBoolean(BaseDialogBuilder.ARG_CANCELABLE_ON_TOUCH_OUTSIDE));
         }
+        /*
+        * disable the actual title of a dialog cause custom dialog title is rendering through custom layout
+         */
+        dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.setOnShowListener(this);
         return dialog;
     }
@@ -433,6 +438,9 @@ public abstract class BaseDialogFragment extends DialogFragment implements Dialo
             return content;
         }
 
+        /*
+        * defining the height of a content layout
+         */
         private void setContentHeight(MultiSwipeRefreshLayout swipeRefreshLayout) {
             if (swipeRefreshLayout != null) {
                 if (contentHeight <= 0) {
