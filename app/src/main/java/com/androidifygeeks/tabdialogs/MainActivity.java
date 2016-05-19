@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements ISimpleDialogList
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private Set<Fragment> mMyScheduleFragments = new HashSet<Fragment>();
+    private final Set<Fragment> mMyScheduleFragments = new HashSet<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements ISimpleDialogList
         switch (requestCode) {
             case REQUEST_TABBED_DIALOG:
                 Toast.makeText(MainActivity.this, "Dialog cancelled", Toast.LENGTH_SHORT).show();
+                break;
+            default:
                 break;
         }
     }
@@ -86,22 +88,32 @@ public class MainActivity extends AppCompatActivity implements ISimpleDialogList
 
         switch (selectedTabPosition) {
             case 0:
-                // add view in container for first tab
-                View tabProductDetailLayout = getLayoutInflater().inflate(R.layout.tab_one_layout, (ViewGroup) rootContainer);
-
-                TextView textView = (TextView) tabProductDetailLayout.findViewById(R.id.text_view);
-                textView.setText("hello: tab1");
+                selectedTabPositionZeroCase(rootContainer);
                 break;
             case 1:
-                // add view in container for second tab
-                View tabProductDetailLayout2 = getLayoutInflater().inflate(R.layout.tab_one_layout, (ViewGroup) rootContainer);
-
-                TextView textView1 = (TextView) tabProductDetailLayout2.findViewById(R.id.text_view);
-                textView1.setText("hello: tab2");
+                selectedTabPositionOneCase(rootContainer);
+                break;
+            default:
                 break;
         }
 
 
+    }
+
+    private void selectedTabPositionZeroCase(View rootContainer) {
+        // add view in container for first tab
+        View tabProductDetailLayout = getLayoutInflater().inflate(R.layout.tab_one_layout, (ViewGroup) rootContainer);
+
+        TextView textView = (TextView) tabProductDetailLayout.findViewById(R.id.text_view);
+        textView.setText("hello: tab1");
+    }
+
+    private void selectedTabPositionOneCase(View rootContainer) {
+        // add view in container for second tab
+        View tabProductDetailLayout2 = getLayoutInflater().inflate(R.layout.tab_one_layout, (ViewGroup) rootContainer);
+
+        TextView textView1 = (TextView) tabProductDetailLayout2.findViewById(R.id.text_view);
+        textView1.setText("hello: tab2");
     }
 
     @Override
