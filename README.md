@@ -9,7 +9,7 @@
 
 ![](https://raw.githubusercontent.com/ashishbhandari/AndroidTabbedDialog/master/screenshots/test.gif)
 
-##Setup
+## Setup
 Add jitpack to your project’s repositories.
 
 ```
